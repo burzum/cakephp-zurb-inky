@@ -13,18 +13,22 @@ class InkyViewTest extends TestCase
     /**
      * testLayout
      */
-    public function testLayout()
+    public function testRender()
     {
         $view = new InkyView();
-        $result = $view->renderLayout('test', 'Email/default');
+        $result = $view->render('Email/test', 'Email/default');
 
-$expected = <<<'EOD'
+        $expected = <<<'EOD'
 <!DOCTYPE html>
 <html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
 <body><table align="center" class="container"><tbody><tr><td><table class="row"><tbody><tr><th class="small-12 large-12 first last columns"><table><tr>
 <th>
-        test    </th>
+<h1>Test</h1>
+<p>
+    Test Content
+</p>
+    </th>
 <th class="expander"></th>
 </tr></table></th></tr></tbody></table></td></tr></tbody></table></body>
 </html>

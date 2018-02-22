@@ -1,4 +1,5 @@
 <?php
+
 namespace Burzum\ZurbInky\View;
 
 use Cake\View\View;
@@ -7,14 +8,19 @@ use Pinky;
 
 class InkyView extends View
 {
-    public function renderLayout($content, $layout = null)
+
+    /**
+     * @inheritDoc
+     */
+    public function render($view = null, $layout = null)
     {
-        $layout = parent::renderLayout($content, $layout);
-        $layout = Pinky\transformString($layout)->saveHTML();
+        $output = parent::render($view, $layout);
+        $output = Pinky\transformString($output)->saveHTML();
 
         $emogrifier = new Emogrifier();
-        $emogrifier->setHtml($layout);
+        $emogrifier->setHtml($output);
         //$emogrifier->setCss();
+
         return $emogrifier->emogrify();
     }
 }
