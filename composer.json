@@ -1,0 +1,25 @@
+{
+	"name": "burzum/cakephp-zurb-inky",
+	"type": "cakephp-plugin",
+	"require": {
+		"lorenzo/pinky": "^1.0",
+		"pelago/emogrifier": "^2.0",
+		"cakephp/cakephp": "^3.5"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "^6.0",
+		"cakephp/cakephp-codesniffer": "^3.0"
+	},
+	"license": "MIT",
+	"autoload": {
+		"psr-4": {
+			"Burzum\\ZurbInky\\": "src"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Burzum\\ZurbInky\\Test\\": "tests",
+			"Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
+		}
+	}
+}
