@@ -1,4 +1,6 @@
 <?php
+declare(strict_types = 1);
+
 namespace Burzum\ZurbInky\Test\TestCase\View;
 
 use Burzum\ZurbInky\View\InkyView;
@@ -9,7 +11,6 @@ use Cake\TestSuite\TestCase;
  */
 class InkyViewTest extends TestCase
 {
-
     /**
      * testLayout
      */
@@ -17,23 +18,27 @@ class InkyViewTest extends TestCase
     {
         $view = new InkyView();
         $result = $view->render('Email/test', 'Email/default');
+        // The container should be a table
+        $this->assertContains('<table align="center" class="container">', $result);
+        // The div should have been turned into a th
+        $this->assertContains('<th class="small-12 large-12 columns"><table><tr><th>', $result);
+        // Is our content there?
+        $this->assertContains('<h1>Test</h1>', $result);
+    }
 
-        $expected = <<<'EOD'
-<!DOCTYPE html>
-<html>
-<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
-<body><table align="center" class="container"><tbody><tr><td><table class="row"><tbody><tr><th class="small-12 large-12 first last columns"><table><tr>
-<th>
-<h1>Test</h1>
-<p>
-    Test Content
-</p>
-    </th>
-<th class="expander"></th>
-</tr></table></th></tr></tbody></table></td></tr></tbody></table></body>
-</html>
-EOD;
+    /**
+     * testRenderWithExternalCssFile
+     */
+    public function testRenderWithExternalCssFile()
+    {
+        $view = new InkyView();
+        $view->setCssFiles([
+            'one',
+            'two'
+        ]);
 
-        $this->assertEquals(trim($result), $expected);
+        $result = $view->render('Email/test2', 'Email/default');
+        $this->assertContains('<h1 style="font-size: 30px;">', $result);
+        $this->assertContains('<h2 style="font-size: 20px;">', $result);
     }
 }

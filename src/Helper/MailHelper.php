@@ -1,4 +1,6 @@
 <?php
+declare(strict_types = 1);
+
 namespace Burzum\ZurbInky\View\Helper;
 
 use Cake\View\Helper\HtmlHelper;
