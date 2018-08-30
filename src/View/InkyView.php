@@ -109,7 +109,7 @@ class InkyView extends View
      */
     protected function _getCssFromFile(string $file) : string
     {
-        $file = WWW_ROOT . $this->Url->css($file);
+        $file = WWW_ROOT . $this->Url->css($file, ['timestamp' => false]);
 
         if (!file_exists($file)) {
             throw new RuntimeException(sprintf('The CSS file `%s` does not exist.', $file));
