@@ -4,7 +4,7 @@
 	"require": {
 		"php": ">=7.1.0",
 		"lorenzo/pinky": "^1.0",
-		"pelago/emogrifier": "^2.0",
+		"pelago/emogrifier": "~2.0",
 		"cakephp/cakephp": "^3.5"
 	},
 	"require-dev": {
