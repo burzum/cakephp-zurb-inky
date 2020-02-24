@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "186718b798dd064091828b47778e8fea",
+    "content-hash": "f95adf9be65c61c3507f199c5942bc7d",
     "packages": [
         {
             "name": "aura/intl",
@@ -246,23 +246,23 @@
         },
         {
             "name": "pelago/emogrifier",
-            "version": "v3.0.0",
+            "version": "v3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/MyIntervals/emogrifier.git",
-                "reference": "d68a8b546d242afaf429ee828deef51909f5e545"
+                "reference": "f6a5c7d44612d86c3901c93f1592f5440e6b2cd8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MyIntervals/emogrifier/zipball/d68a8b546d242afaf429ee828deef51909f5e545",
-                "reference": "d68a8b546d242afaf429ee828deef51909f5e545",
+                "url": "https://api.github.com/repos/MyIntervals/emogrifier/zipball/f6a5c7d44612d86c3901c93f1592f5440e6b2cd8",
+                "reference": "f6a5c7d44612d86c3901c93f1592f5440e6b2cd8",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "ext-libxml": "*",
-                "php": "^5.6.0 || ~7.0.0 || ~7.1.0 || ~7.2.0 || ~7.3.0",
-                "symfony/css-selector": "^2.8 || ^3.0 || ^4.0"
+                "php": "^5.6 || ~7.0 || ~7.1 || ~7.2 || ~7.3 || ~7.4",
+                "symfony/css-selector": "^2.8 || ^3.0 || ^4.0 || ^5.0"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^2.15.3",
@@ -316,7 +316,7 @@
                 "email",
                 "pre-processing"
             ],
-            "time": "2019-10-01T18:21:51+00:00"
+            "time": "2019-12-26T19:37:31+00:00"
         },
         {
             "name": "psr/http-message",
@@ -576,6 +576,7 @@
                 "psr",
                 "psr-7"
             ],
+            "abandoned": "laminas/laminas-diactoros",
             "time": "2019-08-06T17:53:53+00:00"
         }
     ],
